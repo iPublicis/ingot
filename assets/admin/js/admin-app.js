@@ -80,8 +80,7 @@ ingotApp.config(function($stateProvider, $urlRouterProvider) {
             url : '/',
             templateUrl: INGOT_ADMIN.partials + "/welcome.html",
             controller: 'welcome'
-        })
-
+        });
 
 
 });
@@ -139,6 +138,8 @@ ingotApp.controller( 'clickGroup', ['$scope', '$http', '$stateParams', '$rootSco
                     return true;
                 }
             };
+
+
             $scope.isButton =function() {
                 if( 'button' == $scope.group.click_type ) {
                     return true;
@@ -150,6 +151,7 @@ ingotApp.controller( 'clickGroup', ['$scope', '$http', '$stateParams', '$rootSco
                     return true;
                 }
             };
+
         }).error(function(data, status, headers, config) {
             console.log( data );
             swal({
@@ -196,7 +198,7 @@ ingotApp.controller( 'clickGroup', ['$scope', '$http', '$stateParams', '$rootSco
                     type: "error",
                     confirmButtonText: INGOT_TRANSLATION.close
                 });
-            })
+            } );
         };
 
         $scope.addNewTest = function(e) {
@@ -204,7 +206,6 @@ ingotApp.controller( 'clickGroup', ['$scope', '$http', '$stateParams', '$rootSco
             var id = Math.random().toString(36).substring(7);
             $scope.group.tests[ id ] = {'ID':id};
         };
-
 
 }]);
 
